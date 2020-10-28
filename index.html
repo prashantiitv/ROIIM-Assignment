@@ -1,109 +1,81 @@
 <!DOCTYPE html>
 <html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Prashant - ROIIM Assignment</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+	<head>
+        <meta charset="UTF-8">
+        <title>Prashant - ROIIM Assignment</title>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.7.3/tailwind.min.css'>
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-md-4">
-            <!-- CREDIT CARD FORM STARTS HERE -->
-            <div class="panel panel-default credit-card-box">
-                <div class="panel-heading display-table" >
-                    <div class="row display-tr" >
-                        <h3 class="panel-title display-td" >Payment Details</h3>
-                        <div class="display-td" >                            
-                            <img class="img-responsive pull-right" src="https://developer.paysafe.com/fileadmin/content/logos/accepted_cards_by_paysafejs.png">
-                        </div>
-                    </div>                    
-                </div>
-                <div class="panel-body">
-                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label for="cardNumber">CARD NUMBER</label>
-                                    <div class="input-group">
-                                        <div 
-                                            class="form-control"
-                                            id="cardNumber"
-                                        > </div>
-                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-7 col-md-7">
-                                <div class="form-group">
-                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                    <div 
-                                        class="form-control" 
-                                        id="cardExpiry"
-                                    ></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-5 col-md-5 pull-right">
-                                <div class="form-group">
-                                    <label for="cardCVC">CV CODE</label>
-                                    <div 
-                                        class="form-control"
-                                        id="cardCVC"
-                                    ></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <button class="pay btn btn-success btn-lg btn-block" type="button">Pay</button>
-                            </div>
-                        </div>
-                        <div class="row" style="display:none;">
-                            <div class="col-xs-12">
-                                <p class="payment-errors"></p>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>            
-            <!-- CREDIT CARD FORM ENDS HERE -->   
-        </div>            
-        
-        <div class="col-xs-12 col-md-8" style="font-size: 12pt; line-height: 2em;">
-            <p><h1>Features:</h1>
-                <ul>
-                    <li>As-you-type, input formatting</li>
-                    <li>Form field validation</li>
-                    <li>Graceful error feedback for declined card, etc</li>
-                    <li>Card brand recognition</li>
-                    <li>Simulates AJAX processing delay with visual feedback</li>
-                    <li>Creates a Paysafe credit card token</li>
-                </ul>
-                <h1>Test card numbers:</h1>
-                <ul>
-                    <li>4111 1111 1111 1111</li>
-                    <li>4242 4242 4242 4242</li>
-                    <li>With a valid future expiry date, a random three digit CVV</li>
-                    <li>e.g. --> 12/22, 232</li>
-                </ul>
-            </p>
-            
-            <p>Built by <a id="me" target="_blank" href="https://prashantiit.live">Prashant</a> upon: Bootstrap, jQuery,
-                and <a target="_blank" href="https://developer.paysafe.com/en/sdks/paysafejs/overview/">paysafe.js</a>
-            </p>
-        </div>
-        
-    </div>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
-<script src='https://hosted.paysafe.com/js/v1/latest/paysafe.min.js'></script><script  src="./script.js"></script>
+        <link rel="stylesheet" href="./style.css">
+		<script src="https://hosted.paysafe.com/checkout/v1/latest/paysafe.checkout.min.js"></script>
+	</head>
 
-</body>
+	<body>
+        <!-- Demo frontend -->
+        <div class="max-w-screen-xl mx-auto py-24 bg-white p-5">
+            <div class="text-center mb-10">
+              <p class="mt-4 text-sm leading-7 text-gray-500 font-regular">
+                  BRANDS
+                </p>
+                <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+                  Brand <span class="text-indigo-600">Shirts</span>
+                </h3>
+            </div>
+            <div class="sm:flex items-center">
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 p-5">
+                <div class="sm:col-span-5">
+                  <a href="#"><img class="w-full h-full m:mr-10" src="https://flatsome3.uxthemes.com/wp-content/uploads/2013/06/T_7_front.jpg" alt="Avatar of Jonathan Reinink"></a>
+                </div>
+                <div class="sm:col-span-7">
+                  <div class="text-left sm:mt-4">
+                        <div class="text-gray-500">
+                          <a href="#" class="uppercase block text-indigo-600 text-xs hover:text-gray-700">clothing</a>
+                          <a href="#" class="capatalize text-black text-2xl font-semibold hover:text-indigo-600">Happy Ninja</a>
+                          <p class="text-sm text-black">$59.00</p>
+                          
+                          <p class="mt-2 text-sm">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                          </p>
+                          <div class="sm:flex justify-between items-end">
+                            <div class="text-sm mt-5">
+                          <button onclick="checkout()" class="px-5 py-3 uppercase border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition duration-200">
+                                  Buy Now
+                          </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 my-5 p-5">
+                <div class="sm:col-span-5">
+                  <a href="#"><img class="w-full h-full m:mr-10" src="https://flatsome3.uxthemes.com/wp-content/uploads/2013/06/T_7_front.jpg" alt="Avatar of Jonathan Reinink"></a>
+                </div>
+                <div class="sm:col-span-7">
+                  <div class="text-left sm:mt-4">
+                        <div class="text-gray-500">
+                          <a href="#" class="uppercase block text-indigo-600 text-xs hover:text-gray-700">clothing</a>
+                          <a href="#" class="capatalize text-black text-2xl font-semibold hover:text-indigo-600">Happy Ninja</a>
+                          <p class="text-sm text-black">$59.00</p>
+                          
+                          <p class="mt-2 text-sm">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                          </p>
+                          <div class="sm:flex justify-between items-end">
+                            <div class="text-sm mt-5">
+                          <button onclick="checkout()" class="px-5 py-3 uppercase border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition duration-200">
+                                  Buy Now
+                          </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        <!-- Demo frontend end-->
+		<script  src="./script.js"></script>
+	</body>
+
 </html>
