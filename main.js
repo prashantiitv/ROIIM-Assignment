@@ -26,7 +26,6 @@ async function Pay() {
     data: JSON.stringify({ email: email, phone: phone, firstName: firstName }),
     success: function (result) {
       token = result.token;
-      // console.log(result);
       billingAddress = {
         city: city,
         street: address,
@@ -56,17 +55,11 @@ async function Pay() {
           }
         );
       }
-      // console.log(uuidv4());
       checkout(token, billingAddress, customer, amount, uuidv4());
     },
   });
 }
 function checkout(token, billingAddress, customer, amount, uuid) {
-  //          console.log(customer)
-  // console.log(billingAddress)
-  // console.log(amount)
-  // console.log(uuid)
-  // console.log(token)
   paysafe.checkout.setup(
     "cHVibGljLTc3NTE6Qi1xYTItMC01ZjAzMWNiZS0wLTMwMmQwMjE1MDA4OTBlZjI2MjI5NjU2M2FjY2QxY2I0YWFiNzkwMzIzZDJmZDU3MGQzMDIxNDUxMGJjZGFjZGFhNGYwM2Y1OTQ3N2VlZjEzZjJhZjVhZDEzZTMwNDQ=",
     {
@@ -91,8 +84,6 @@ function checkout(token, billingAddress, customer, amount, uuid) {
     },
     function (instance, error, result) {
       if (result && result.paymentHandleToken) {
-        // console.log(result);
-
         $.ajax({
           type: "POST",
           url: "http://localhost:3000/payment",
@@ -112,16 +103,12 @@ function checkout(token, billingAddress, customer, amount, uuid) {
             setTimeout(function () {
               window.location.replace(window.location.href);
             }, 5000);
-
-            //
           },
         });
       } else {
         console.log("error");
         alert("Please keep in mind -----" + error.detailedMessage);
         console.error(error);
-        // window.location.replace(window.location.origin);
-
         // Handle the error
       }
     },

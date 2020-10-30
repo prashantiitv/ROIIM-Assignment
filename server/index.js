@@ -40,7 +40,6 @@ app.post("/token", function (req, res) {
       console.log("paysafe", paysafe.length);
       if (paysafe.length == 0) {
         await util.getId(req.body, function (result) {
-          // console.log(result);
           var newpaysafe = {
             payid: result,
             email: req.body.email,
@@ -48,14 +47,12 @@ app.post("/token", function (req, res) {
           console.log(newpaysafe);
           Paysafe.create(newpaysafe, async function (err, newlyCreated) {
             if (err) {
-              // console.log(err);
             } else {
               paysafe = newlyCreated;
               console.log("paysafe**********", paysafe);
               await token.getToken(paysafe.payid, function (result) {
                 res.send({ token: result });
               });
-              // console.log("added",newlyCreated)
             }
           });
         });
@@ -72,7 +69,7 @@ app.post("/token", function (req, res) {
 app.post("/payment", async (req, res) => {
   console.log(req.body);
   await payment.onPay(req.body, function (result) {
-    console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^", result);
+    console.log("result: ", result);
     res.send({ data: result.status });
   });
 });

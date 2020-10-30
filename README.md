@@ -17,6 +17,7 @@ To test save card flow make payment with same emailid followed by checking save 
 
 ## To run app on your local system clone the repository
 
+- cd server
 - `npm install`
 - `npm start`
 - Open `index.html` in any browser
