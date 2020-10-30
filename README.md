@@ -4,7 +4,7 @@
 
 ## See Live
 
-To view the app live, [Click Here](http://ec2-52-90-94-62.compute-1.amazonaws.com/)
+To view the app live, [Click Here](http://52-90-94-62/)
 
 ## Test card numbers:
 
