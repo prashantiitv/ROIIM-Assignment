@@ -4,7 +4,7 @@
 
 ## See Live
 
-To view the app live, [Click Here](https://prashantiitv.github.io/ROIIM-Assignment/)
+To view the app live, [Click Here](http://ec2-52-90-94-62.compute-1.amazonaws.com/)
 
 ## Test card numbers:
 
