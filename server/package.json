@@ -15,10 +15,6 @@
     "heroku",
     "express"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/prashantiitv/ROIIM-Assignment"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {

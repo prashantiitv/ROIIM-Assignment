@@ -20,7 +20,7 @@ async function Pay() {
   //amount
   let amount = document.getElementById("inputAmount").value;
   $.ajax({
-    url: "http://localhost:3000/token",
+    url: "http://ec2-3-88-109-190.compute-1.amazonaws.com:80/token",
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify({ email: email, phone: phone, firstName: firstName }),
@@ -86,7 +86,7 @@ function checkout(token, billingAddress, customer, amount, uuid) {
       if (result && result.paymentHandleToken) {
         $.ajax({
           type: "POST",
-          url: "http://localhost:3000/payment",
+          url: "http://ec2-3-88-109-190.compute-1.amazonaws.com:80/payment",
           contentType: "application/json",
           data: JSON.stringify({
             token: result.paymentHandleToken,
