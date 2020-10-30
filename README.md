@@ -2,6 +2,10 @@
 
 `A simple checkout form to collect card details. Included save card feature.`
 
+## See Live
+
+To view the app live, [Click Here](https://prashantiitv.github.io/ROIIM-Assignment/)
+
 ## Test card numbers:
 
 - `4111 1111 1111 1111`
