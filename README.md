@@ -9,7 +9,7 @@
 - With a valid future expiry date, a random three digit CVV
 - e.g. --> `12/22, 232`
 
-Don't use real cards for test use this link to have dummy test cards: - `https://developer.paysafe.com/en/rest-apis/cards/test-and-go-live/test-cards/`
+Don't use real cards for test use this link to have dummy test cards: [https://developer.paysafe.com/en/rest-apis/cards/test-and-go-live/test-cards/](https://developer.paysafe.com/en/rest-apis/cards/test-and-go-live/test-cards/)
 
 Interested Tester can fill their own values in the form
 
