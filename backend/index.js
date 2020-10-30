@@ -14,7 +14,8 @@ var path = require("path");
 
 const port = 3000;
 
-const uri = "mongodb+srv://prashantiitv:prash712@cluster0.k2pla.mongodb.net/rooim?retryWrites=true&w=majority"
+const uri =
+  "mongodb+srv://prashantiitv:prash712@cluster0.k2pla.mongodb.net/rooim?retryWrites=true&w=majority";
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,7 +24,7 @@ app.use(bodyParser.json());
 mongoose.connect(uri);
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname + "/index.html"));
+  res.sendFile(path.join("/index.html"));
 });
 //routes for token
 app.post("/token", function (req, res) {
@@ -76,8 +77,6 @@ app.post("/payment", async (req, res) => {
   });
 });
 
-app.listen(port, () =>
-  console.log(`App listening on port ${port}!`)
-);
+app.listen(port, () => console.log(`App listening on port ${port}!`));
 
 // Where we will keep books
