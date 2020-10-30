@@ -1,15 +1,6 @@
 # Accept a Card Payment with Paysafe Checkout
 
-`A simple checkout form to collect card details. Included are some basic build.`
-
-## Features:
-
-- As-you-type, input formatting
-- Form field validation
-- Graceful error feedback for declined card, etc
-- Card brand recognition
-- Simulates AJAX processing delay with visual feedback
-- Creates a Paysafe credit card token
+`A simple checkout form to collect card details. Included save card feature.`
 
 ## Test card numbers:
 
@@ -18,6 +9,14 @@
 - With a valid future expiry date, a random three digit CVV
 - e.g. --> `12/22, 232`
 
-## Running the sample
+Don't use real cards for test use this link to have dummy test cards: - `https://developer.paysafe.com/en/rest-apis/cards/test-and-go-live/test-cards/`
 
-To view a demo example, [Click Here](https://prashantiitv.github.io/ROIIM-Assignment/)
+Interested Tester can fill their own values in the form
+
+To test save card flow make payment with same emailid followed by checking save card option while payment
+
+## To run app on your local system clone the repository
+
+- `npm install`
+- `npm start`
+- Open `index.html` in any browser
