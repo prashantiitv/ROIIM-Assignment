@@ -4,7 +4,7 @@
 
 ## See Live
 
-To view the app live, [Click Here](http://52.90.94.62/)
+To view the app live, [Click Here](http://54.226.182.106/)
 
 ## Test card numbers:
 
